@@ -89,13 +89,6 @@ public class GameFrame2 extends JFrame{
 					e.printStackTrace();
 				}
 				
-				if(differenceX <= player1SizeWidth) {
-					if(differenceY >= -player1SizeHeight) {
-						enemySizeWidth = 0;
-						enemySizeHeight = 0;
-					}
-				}
-				
 				repaint();
 			}
 		}
@@ -152,7 +145,7 @@ public class GameFrame2 extends JFrame{
 					player1Y -= 10;
 				} else if (code == KeyEvent.VK_DOWN) {
 					player1Y += 10;
-				} else if (code == KeyEvent.VK_LEFT) {
+				 } else if (code == KeyEvent.VK_LEFT) {
 					player1X -= 10;
 				} else if (code == KeyEvent.VK_RIGHT) {
 					player1X += 10;
@@ -162,7 +155,12 @@ public class GameFrame2 extends JFrame{
 				}
 				// 2. player 가 적군과 만났다면 player 그림을 없애 주세요
 				
-			
+				if(differenceX <= player1SizeWidth) {
+					if(differenceY >= -player1SizeHeight) {
+						enemySizeWidth = 0;
+						enemySizeHeight = 0;
+					}
+				}
 				
 				repaint();
 				
